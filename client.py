@@ -35,7 +35,7 @@ def receive_messages():
     while True:
         message = client.recv(1024).decode()
         message_queue.append(message)
-        time.sleep(3)
+        time.sleep(2)
 
 receive_thread = threading.Thread(target=receive_messages)
 receive_thread.start()
