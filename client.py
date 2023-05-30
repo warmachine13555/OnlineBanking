@@ -22,14 +22,20 @@ message_label.pack()
 message_entry = ctk.CTkEntry(root)
 message_entry.pack(anchor='center')
 
+
 def send_message(event=None):
     message = message_entry.get()
-    client.send(message.encode())
+    if message.lower() == "register":
+        register()
+    else:
+        client.send(message.encode())
     message_entry.delete(0, tk.END)
+
 
 message_entry.bind("<Return>", send_message)
 
 message_queue = []
+
 
 def receive_messages():
     while True:
@@ -37,8 +43,10 @@ def receive_messages():
         message_queue.append(message)
         time.sleep(2)
 
+
 receive_thread = threading.Thread(target=receive_messages)
 receive_thread.start()
+
 
 def update_message_label():
     if message_queue:
@@ -46,6 +54,17 @@ def update_message_label():
 
     root.after(100, update_message_label)
 
+
 root.after(100, update_message_label)
+
+
+# Register function
+def register():
+    client.send("register".encode())
+
+
+# Register button
+register_button = ctk.CTkButton(root, text="Register", command=register)
+register_button.place(x=10, y=10)
 
 root.mainloop()

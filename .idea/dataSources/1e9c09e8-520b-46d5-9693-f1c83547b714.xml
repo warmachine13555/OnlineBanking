@@ -1423,5 +1423,61 @@
     <argument id="503" parent="172">
       <Position>1</Position>
     </argument>
+    <table id="504" parent="173" name="sqlite_master">
+      <System>1</System>
+    </table>
+    <table id="505" parent="173" name="sqlite_sequence">
+      <System>1</System>
+    </table>
+    <table id="506" parent="173" name="userdata"/>
+    <column id="507" parent="504" name="type">
+      <DasType>TEXT|0s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="508" parent="504" name="name">
+      <DasType>TEXT|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="509" parent="504" name="tbl_name">
+      <DasType>TEXT|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="510" parent="504" name="rootpage">
+      <DasType>INT|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="511" parent="504" name="sql">
+      <DasType>TEXT|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <column id="512" parent="505" name="name">
+      <Position>1</Position>
+    </column>
+    <column id="513" parent="505" name="seq">
+      <Position>2</Position>
+    </column>
+    <column id="514" parent="506" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>INTEGER|0s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="515" parent="506" name="username">
+      <DasType>TEXT|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="516" parent="506" name="password">
+      <DasType>TEXT|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="517" parent="506" name="totp">
+      <DasType>TEXT|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <key id="518" parent="506">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
   </database-model>
 </dataSource>
